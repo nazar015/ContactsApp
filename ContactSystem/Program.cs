@@ -1,8 +1,6 @@
 using Asp.Versioning;
 using ContactAdministrationSystem.Infrastructure;
-using ContactSystem.Application.Entities;
 using ContactSystem.Application.Repositories.Interfaces;
-using ContactSystem.Application.Services;
 using ContactSystem.Application.Services.Interfaces;
 using ContactSystem.Infrastructure.Repositories;
 using ContactSystem.Infrastructure.Services;
@@ -27,8 +25,10 @@ builder.Services.AddCors(options =>
 
 
 builder.Services.AddScoped<IContactsRepository, ContactsRepository>();
+builder.Services.AddScoped<IOfficeRepository, OfficeRepository>();
+
 builder.Services.AddScoped<IContactsService, ContactsService>();
-builder.Services.AddScoped<IOfficesService, OfficeService>();
+builder.Services.AddScoped<IOfficeService, OfficeService>();
 
 
 builder.Services.AddDbContext<GraniteDataContext>(options =>
@@ -90,7 +90,7 @@ using (var serviceScope = app.Services.CreateScope())
     {
         var seeder = new Seeder(dbContext);
         await seeder.Apply();
-        }
+    }
 }
 
 

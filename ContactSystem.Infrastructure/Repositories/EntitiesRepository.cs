@@ -17,12 +17,14 @@ namespace ContactSystem.Infrastructure.Repositories
 
         public async Task<TEntity> GetByIdAsync(TKey id)
         {
-            return await _dbSet.FindAsync(id);
+            var entity = await _dbSet.FirstOrDefaultAsync(e => e.Id.Equals(id)) ?? throw new KeyNotFoundException($"Entity with id {id} not found.");
+
+            return entity;
         }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await _dbSet.ToListAsync();
+            return await _dbSet.AsNoTracking().ToListAsync();
         }
 
         public async Task AddAsync(TEntity entity)

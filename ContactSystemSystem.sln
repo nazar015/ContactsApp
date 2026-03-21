@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.8.34525.116
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11408.92 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactSystem.API", "ContactSystem\ContactSystem.API.csproj", "{B3AD393D-5ED2-4E99-BCF9-6F1668E66B48}"
 EndProject
@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ContactSystem.Client", "Con
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ContactSystem.Client", "ContactSystem.Client\", "{76521887-A541-4D83-8F42-EDD479A61CF1}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_59751"
 		Debug.AspNetCompiler.PhysicalPath = "ContactSystem.Client\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59751\"
