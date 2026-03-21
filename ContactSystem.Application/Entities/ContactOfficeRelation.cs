@@ -6,7 +6,7 @@ public class ContactOfficeRelation
 
     public Guid OfficeId { get; set; }
 
-    public ContactEntity Contact { get; set; } = null!;
+    public Contact Contact { get; set; } = null!;
 
-    public OfficeEntity Office { get; set; } = null!;
+    public Office Office { get; set; } = null!;
 }

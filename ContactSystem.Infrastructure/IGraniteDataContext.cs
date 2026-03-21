@@ -5,9 +5,9 @@ namespace ContactSystem.Infrastructure;
 
 public interface IGraniteDataContext
 {
-    DbSet<ContactEntity> Contacts { get; set; }
+    DbSet<Contact> Contacts { get; set; }
 
-    DbSet<OfficeEntity> Offices { get; set; }
+    DbSet<Office> Offices { get; set; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

@@ -4,6 +4,9 @@ using ContactSystem.Application.Entities;
 using ContactSystem.Application.Repositories.Interfaces;
 using ContactSystem.Application.Services;
 using ContactSystem.Application.Services.Interfaces;
+using ContactSystem.Infrastructure.Repositories;
+using ContactSystem.Infrastructure.Services;
+using ContactSystem.Infrastructure.Utilities;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -80,39 +83,14 @@ using (var serviceScope = app.Services.CreateScope())
 {
     var dbContext = serviceScope.ServiceProvider.GetRequiredService<GraniteDataContext>();
 
-    // In real world do a proper migration, but here's the test data
+    // as In‑Memory provider does NOT support migrations, we will just seed the data directly when there is no data in the database.
+    // In a real world application, we should use a proper migration strategy.
 
-    dbContext.Offices.Add(new OfficeEntity
+    if (!dbContext.Contacts.Any())
     {
-        Id = new Guid("ff0c022e-1aff-4ad8-2231-08db0378ac98"),
-        Name = "Default office"
-    });
-
-    dbContext.Contacts.Add(new ContactEntity
-    {
-        Id = new Guid("c00b9ff3-b1b6-42fe-8b5a-4c28408fb64a"),
-        FirstName = "Alejandro",
-        LastName = "Alfonso",
-        Email = "aalfonso@gmail.com",
-        ContactOffices = new List<ContactOfficeRelation>
-        {
-            new()
-            {
-                ContactId = new Guid("c00b9ff3-b1b6-42fe-8b5a-4c28408fb64a"),
-                OfficeId = new Guid("ff0c022e-1aff-4ad8-2231-08db0378ac98"),
-            }
+        var seeder = new Seeder(dbContext);
+        await seeder.Apply();
         }
-    });
-    dbContext.Contacts.Add(
-        new ContactEntity
-        {
-            Id = new Guid("1ec2d3f7-8aa8-4bf5-91b8-045378919049"),
-            FirstName = "Mark",
-            LastName = "Costello",
-            Email = "mcostello@gmail.com"
-        });
-
-    dbContext.SaveChanges();
 }
 
 

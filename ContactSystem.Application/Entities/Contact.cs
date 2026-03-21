@@ -1,6 +1,6 @@
 ﻿namespace ContactSystem.Application.Entities;
 
-public class ContactEntity : Entity<Guid>
+public class Contact : Entity<Guid>
 {
     public string FirstName { get; set; } = null!;
 
@@ -8,5 +8,5 @@ public class ContactEntity : Entity<Guid>
 
     public string Email { get; set; } = null!;
 
-    public ICollection<ContactOfficeRelation>? ContactOffices { get; set; }
+    public ICollection<ContactOfficeRelation> ContactOffices { get; set; } = new HashSet<ContactOfficeRelation>();
 }

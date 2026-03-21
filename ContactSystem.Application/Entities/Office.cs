@@ -1,6 +1,6 @@
 namespace ContactSystem.Application.Entities;
 
-public class OfficeEntity : Entity<Guid>
+public class Office : Entity<Guid>
 {
     public string Name { get; set; } = null!;
 
