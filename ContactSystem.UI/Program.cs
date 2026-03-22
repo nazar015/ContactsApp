@@ -1,4 +1,3 @@
-using Asp.Versioning;
 using ContactSystem.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,20 +5,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient<ContactSearchService>();
-
-//builder.Services.AddScoped<ContactSearchService>();
-
-builder.Services.AddApiVersioning(options =>
-{
-    options.DefaultApiVersion = new ApiVersion(1, 0);
-    options.AssumeDefaultVersionWhenUnspecified = true;
-    options.ReportApiVersions = true;
-})
-    .AddApiExplorer(options =>
-    {
-        options.GroupNameFormat = "'v'VVV";
-        options.SubstituteApiVersionInUrl = true;
-    });
 
 var app = builder.Build();
 

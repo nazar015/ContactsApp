@@ -1,4 +1,3 @@
-using Asp.Versioning;
 using ContactSystem.Application.Common;
 using ContactSystem.Application.Dtos;
 using ContactSystem.Application.Entities;

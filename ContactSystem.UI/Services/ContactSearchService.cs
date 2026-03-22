@@ -8,7 +8,7 @@ namespace ContactSystem.UI.Services
 {
     public class ContactSearchService
     {
-        private string baseUrl = "http://localhost:5272";
+        private string baseUrl = "https://seecontactsbe-azf0dfcqg6c9bmds.canadacentral-01.azurewebsites.net";
         private readonly HttpClient _httpClient;
 
         public ContactSearchService(HttpClient httpClient)
