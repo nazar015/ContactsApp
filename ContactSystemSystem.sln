@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.3.11408.92 d18.3
+VisualStudioVersion = 18.3.11408.92
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactSystem.API", "ContactSystem\ContactSystem.API.csproj", "{B3AD393D-5ED2-4E99-BCF9-6F1668E66B48}"
 EndProject
@@ -36,6 +36,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ContactSystem.Client", "Con
 		SlnRelativePath = "ContactSystem.Client\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSystem.UI", "ContactSystem.UI\ContactSystem.UI.csproj", "{74F15EAA-392A-44D5-9C3B-94909730AA0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{76521887-A541-4D83-8F42-EDD479A61CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76521887-A541-4D83-8F42-EDD479A61CF1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{76521887-A541-4D83-8F42-EDD479A61CF1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{74F15EAA-392A-44D5-9C3B-94909730AA0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F15EAA-392A-44D5-9C3B-94909730AA0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F15EAA-392A-44D5-9C3B-94909730AA0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F15EAA-392A-44D5-9C3B-94909730AA0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{3225823F-02FF-44EA-87BF-39E99F8E237F} = {2D3C4964-948D-4A28-B019-1659E419755C}
 		{F538F9AB-08A0-4D55-B71D-5A0FDD545B0B} = {65A388FB-4A34-4BCE-A40A-887B418705AD}
 		{76521887-A541-4D83-8F42-EDD479A61CF1} = {95056A00-D1AB-403E-B066-87BE91853D7C}
+		{74F15EAA-392A-44D5-9C3B-94909730AA0B} = {95056A00-D1AB-403E-B066-87BE91853D7C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82ADB241-AECC-4322-A2E0-70206B9AAE5C}
