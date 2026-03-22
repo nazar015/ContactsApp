@@ -54,7 +54,7 @@ namespace ContactSystem.Infrastructure.Utilities
 
             var offices = new List<Office>();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 2; i++)
             {
                 var office = new Office()
                 {
@@ -67,16 +67,16 @@ namespace ContactSystem.Infrastructure.Utilities
 
             await _context.AddRangeAsync(offices);
 
-            string[] names = ["Peter", "Paul", "Jane"];
-            string[] surnames = ["Cliff", "Jackson", "Smith"];
+            string[] names = ["Peter", "Paul", "Jane", "Mary", "James", "Anna", "William", "Blake", "John", "Jacob"];
+            string[] surnames = ["Cliff", "Jackson", "Smith", "Edwards", "Johnson", "Gordon", "Taylor", "Baker", "Hill", "Jones"];
             var rand = new Random();
 
             var contacts = new List<Contact>();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 40; i++)
             {
-                var name = names[rand.Next(0, 2)];
-                var surname = surnames[rand.Next(0, 2)];
+                var name = names[rand.Next(0, 9)];
+                var surname = surnames[rand.Next(0, 9)];
                 var email = $"{name}.{surname}{rand.Next(1, 1000)}@gmail.com";
 
                 var contact = new Contact()
@@ -87,16 +87,13 @@ namespace ContactSystem.Infrastructure.Utilities
                     Email = email
                 };
 
-                if (i % 2 == 0)
+                var link = new ContactOfficeRelation()
                 {
-                    var link = new ContactOfficeRelation()
-                    {
-                        ContactId = contact.Id,
-                        OfficeId = offices[rand.Next(offices.Count)].Id
-                    };
+                    ContactId = contact.Id,
+                    OfficeId = offices[rand.Next(offices.Count)].Id
+                };
 
-                    contact.ContactOffices.Add(link);
-                }
+                contact.ContactOffices.Add(link);
 
                 contacts.Add(contact);
             }
